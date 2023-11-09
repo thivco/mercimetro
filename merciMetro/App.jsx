@@ -2,11 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Panel from './components/Panel';
+import Search from './components/Search';
+import "./style.css"
 
 export default function App() {
     return (
       <View style={styles.container}>
-        <Panel/>
+        <Search/>
+        <Panel stationID="24136" />
         <StatusBar style="auto" />
       </View>
     );
@@ -16,13 +19,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111',
+    backgroundColor: '#ddd',
     alignItems: 'center',
     justifyContent: 'center',
   },
   welcomeText: {
     color: "white",
-    fontSize: "2rem"
+    fontSize: "2rem",
+    textAlign:"center"
   },
   title: {
     fontWeight: "bolder"
