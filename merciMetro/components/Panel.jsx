@@ -61,14 +61,6 @@ export default function Panel(props) {
         <Text style={styles.welcomeText}>Direction <span style={styles.title}>{infos["destination"] ? infos["destination"] : "Truc"}</span></Text>
         <View style={styles.timestamps}>
           <PanelContent infos={infos} />
-          {/* <View style={styles.singleTimestamp}>
-            <Text style={styles.welcomeText}>1st train</Text>
-            <Text style={styles.welcomeText}><span style={styles.minutesRemaining}>{infos["minutes0"]}</span> min</Text>
-          </View>
-          <View style={styles.singleTimestamp}>
-            <Text style={styles.welcomeText}>2nd train</Text>
-            <Text style={styles.welcomeText}><span style={styles.minutesRemaining}>{infos["minutes1"]}</span> min</Text>
-          </View> */}
         </View>
       </View>
     );
