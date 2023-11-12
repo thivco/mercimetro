@@ -16,6 +16,7 @@ export default function PanelContent(props) {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     timestampMinute: {
         fontWeight: "bolder",
@@ -25,8 +26,8 @@ const styles = StyleSheet.create({
     },
     timestamps: {
         display: "flex",
-        textAlign:"center",
         flexDirection: "row",
+        textAlign:"center",
         justifyContent: "space-evenly",
         width:"100%"
     },
