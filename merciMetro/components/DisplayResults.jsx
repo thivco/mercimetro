@@ -1,37 +1,35 @@
-import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import { useEffect, useState } from 'react';
 
 export default function DisplayResults(props) {
-    const [newResults, setNewResults] = useState([])
+    const [newResults, setNewResults] = useState([]);
+
     useEffect(() => {
         if (props.results.records) {
-            if (props.results.records.length < newResults.length) {
-                setNewResults(["zizi"])
-            }
-            for (let i = 0; i < props.results.records.length; i++) {
-                newResults[i] = {
-                    "key": i,
-                    "line": props.results.records[i].fields.res_com,
-                    "name": props.results.records[i].fields.nom_zda,
-                }
-                setNewResults(newResults)
-            }
+            const updatedResults = props.results.records.map((record, index) => ({
+                key: index,
+                line: record.fields.res_com,
+                name: record.fields.nom_zda,
+            }));
+            setNewResults(updatedResults);
+        } else {
+            setNewResults([]);
         }
-        else {
-            setNewResults([])
-        }
+    }, [props.results]);
 
-        // setNewResults(props.results)
-    }, [props.results])
+    function addStation(key) {
+        console.log(key)
+    }
+
     return (
         <>
-        <p>Hello la streetzer</p>
-            {newResults.map((result) => {
-                return <p style={styles.resultText} key={result.key}>{result.line} - {result.name}</p>
-            })}
+            {newResults.map((result) => (
+                <p style={styles.resultText} key={result.key} onClick={() => addStation(result.key)}>
+                    {result.line} - {result.name}
+                </p>
+            ))}
         </>
-    )
+    );
 }
 
 
