@@ -9,7 +9,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <Search/>
-        <Panel stationID="28018" />
+        {/* <Panel stationID="28018" /> */}
         <StatusBar style="auto" />
       </View>
     );
