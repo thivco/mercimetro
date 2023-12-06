@@ -15,6 +15,7 @@ export default function DisplayResults(props) {
         } else {
             setNewResults([]);
         }
+        console.log(props.results)
     }, [props.results]);
 
     function addStation(key) {
