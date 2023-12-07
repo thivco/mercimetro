@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Panel from './components/Panel';
@@ -9,8 +8,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <Search/>
-        {/* <Panel stationID="28018" /> */}
-        <StatusBar style="auto" />
+        {/* <Panel stationID="22175" /> */}
       </View>
     );
   }

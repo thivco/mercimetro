@@ -45,52 +45,24 @@ export default function Panel(props) {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>Metro is down !</Text>
+      <View>
+        <Text>Metro is down !</Text>
       </View>
     )
   }
   else {
 
     return (
-      <View style={styles.panel}>
-        <View style={styles.panelTitle}>
-          <Text style={styles.welcomeText}>Ligne 7</Text>
-          <Text style={styles.welcomeText}> - <span style={styles.title}>{infos["station"] ? infos["station"] : "Truc"}</span></Text>
+      <View>
+        <View>
+          <Text>Ligne 7</Text>
+          <Text> - <span>{infos["station"] ? infos["station"] : "Truc"}</span></Text>
         </View>
-        <Text style={styles.welcomeText}>Direction <span style={styles.title}>{infos["destination"] ? infos["destination"] : "Truc"}</span></Text>
-        <View style={styles.timestamps}>
+        <Text>Direction <span>{infos["destination"] ? infos["destination"] : "Truc"}</span></Text>
+        <View>
           <PanelContent infos={infos} />
         </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  welcomeText: {
-    color: "yellow",
-  },
-  panelTitle: {
-    display: "flex",
-    flexDirection: "row"
-  },
-  timestamps: {
-    marginTop: "2rem",
-    display: "flex",
-    flexDirection: "row",
-    gap: "2rem",
-    justifyContent: "center"
-  },
-  singleTimestamp: {
-    display: "flex",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  panel: {
-    backgroundColor: "black",
-    width: "90%"
-    // padding:"2rem"
-  }
-});

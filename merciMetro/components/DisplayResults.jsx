@@ -6,6 +6,7 @@ export default function DisplayResults(props) {
 
     useEffect(() => {
         if (props.results.records) {
+            console.log(props.results.records)
             const updatedResults = props.results.records.map((record, index) => ({
                 key: index,
                 line: record.fields.res_com,
@@ -15,7 +16,6 @@ export default function DisplayResults(props) {
         } else {
             setNewResults([]);
         }
-        console.log(props.results)
     }, [props.results]);
 
     function addStation(key) {
@@ -25,7 +25,7 @@ export default function DisplayResults(props) {
     return (
         <>
             {newResults.map((result) => (
-                <p style={styles.resultText} key={result.key} onClick={() => addStation(result.key)}>
+                <p style={styles.resultText} key={result.key} onClick={() => addStation(result)}>
                     {result.line} - {result.name}
                 </p>
             ))}

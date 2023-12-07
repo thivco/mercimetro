@@ -1,6 +1,0 @@
-.minutes::after {
-    content: "minutes";
-    position:absolute;
-    top:15rem;
-    font-size: 10px;
-}
