@@ -29,7 +29,7 @@ export default function Panel(props) {
             "remaining": tmpTimestamp.diff(moment()),
             "minutes": moment.duration(diff).minutes(),
             "seconds": moment.duration(diff).seconds()
-          }
+         }
 
           // const tmpTimestamp = 
           // infos["minutes"+i] = moment.duration(diff).minutes();
