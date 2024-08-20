@@ -8,6 +8,7 @@ export default function formatNextTrains(
   lineCode: string,
   nextTrainsFormattedData: any
 ) {
+  
   nextTrainsFormattedData = {
     ...nextTrainsFormattedData,
   };
@@ -52,27 +53,27 @@ export default function formatNextTrains(
         if (nextTrainsFormattedData[stationName] == undefined) {
           nextTrainsFormattedData = {
             ...nextTrainsFormattedData,
-            [stationName]:[],
+            [stationName]: [],
           };
         }
         if (nextTrainsFormattedData[stationName][lineName] == undefined) {
           nextTrainsFormattedData[stationName] = {
             ...nextTrainsFormattedData[stationName],
-            [lineName]:[],
+            [lineName]: [],
           };
         }
         // console.log("Data pour check", nextTrainsFormattedData, lineName, destinationId);
-      if(nextTrainsFormattedData[stationName][lineName][destinationId] == undefined){
-        nextTrainsFormattedData[stationName][lineName] = {
-          ...nextTrainsFormattedData[stationName][lineName],
-        [destinationId] : []
+        if (nextTrainsFormattedData[stationName][lineName][destinationId] == undefined) {
+          nextTrainsFormattedData[stationName][lineName] = {
+            ...nextTrainsFormattedData[stationName][lineName],
+            [destinationId]: []
+          }
         }
-      }
 
-      
-      nextTrainsFormattedData[stationName][lineName][destinationId].push(diff)
-       
-      //   nextArrivals: {
+
+        nextTrainsFormattedData[stationName][lineName][destinationId].push(diff)
+
+        //   nextArrivals: {
         //     [formattedLine]: {
         //       [destinationId]: []
         //     },

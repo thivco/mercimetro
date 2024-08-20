@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default async function GetNextTrain(stationId: string) {
-  
+  console.log("Call api futurs arrets");
   console.log(stationId)
   return await fetch(
     "https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=STIF:StopPoint:Q:" +

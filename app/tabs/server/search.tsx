@@ -2,6 +2,8 @@ import { useState } from "react";
 import GetNextTrain from "./getnexttrain";
 
 export default async function search(searchString: string) {
+  console.log("Call api recherche");
+
   // const [nextTrains, setNextTrains] = useState()
   // const [stationList, setStationList] = useState([]);
 
