@@ -1,22 +1,18 @@
+import { useState } from "react"
+
 export default function Destination(props:any) {
-    let firstTrain = new Date(props.destinationInfo[1][0])
-    let secondTrain = new Date(props.destinationInfo[1][1])
-    // let firstTrain = new Date(props.destinationInfo[1][0]).getMinutes() + ":" + new Date(props.destinationInfo[1][0]).getSeconds()
-    // let secondTrain = new Date(props.destinationInfo[1][1]).getMinutes() + ":" + new Date(props.destinationInfo[1][1]).getSeconds()
+    const [displayTrain, setDisplayTrain] = useState([])
+
     let train = props.destinationInfo[1]
-    // for(let i = 0; i<2; i++){
-    //     train[i] = new Date(train[i])
-    // }
-    setInterval(() => {
-        
+    let tempTrains = ["",""]
+    setTimeout(() => {
+        console.log("teste");
         for(let i = 0; i<2; i++){
-            console.log("index", i);
-            
             train[i] = reduceTime(train[i])
-            // console.log("train en cours mdr", train[i]);
-            train[i] = new Date(train[i])
-            console.log("Temps restant : ", train[i].getSeconds());
+            console.log("Temps restant : ", displayTrain[i]);
+            tempTrains[i] = new Date(train[i]).getMinutes() + ":" + new Date(train[i]).getSeconds()
         }
+        setDisplayTrain(tempTrains)
     }, 1000);
 
     function reduceTime (milliseconds){
@@ -27,8 +23,8 @@ export default function Destination(props:any) {
     return(
         <>
             <p>{props.destinationInfo[0]}</p>
-            <p>1st train <br /> {train[0].getSeconds()}</p>
-            <p>2nd train <br /> {train[1].getSeconds()}</p>
+            <p>1st train <br /> {displayTrain[0] != "" && displayTrain[0]}</p>
+            <p>2nd train <br /> {displayTrain[1] != "" && displayTrain[1]}</p>
         </>
     )
 }
