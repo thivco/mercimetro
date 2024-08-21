@@ -28,7 +28,7 @@ export default function Station(props: any) {
   // console.log("Station data", stationData, "station Name", stationName);
 
   return (
-    <>
+    <div className="station">
       <Text
         key={props.index}
         onPress={() => revealLines(stationData)}
@@ -46,6 +46,6 @@ export default function Station(props: any) {
         )
       })}
       <br /> <br />
-    </>
+    </div>
   );
 }

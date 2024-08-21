@@ -1,6 +1,6 @@
-import Panel from "./components/destination";
-import Favorites from "./components/favorites";
-import AllStations from "./components/allstations";
+import Panel from "../components/destination";
+import Favorites from "../components/favorites";
+import AllStations from "../components/allstations";
 import { Text, View } from "react-native";
 import { useState } from "react";
 

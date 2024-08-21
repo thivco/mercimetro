@@ -1,10 +1,11 @@
 import { Button, Text, View } from "react-native";
 import { useState } from "react";
-import search from "./server/search";
+import search from "../server/search";
 import { useRef } from "react";
 import { Ref } from "react";
-import formatResults from "./server/formatresults";
-import Station from "./components/station";
+import formatResults from "../server/formatresults";
+import Station from "../components/station";
+import "../../assets/style/style.css"
 
 export default function Tab() {
   const [station, setStation] = useState("");
@@ -56,6 +57,7 @@ export default function Tab() {
       }}
     >
       <input
+      className="searchBar"
         type="text"
         placeholder="Search a line, a station"
         onChange={handleResult}

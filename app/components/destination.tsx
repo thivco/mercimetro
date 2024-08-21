@@ -13,11 +13,11 @@ export default function Destination(props:any) {
             tempTrains[i] = new Date(train[i]).getMinutes() + ":" + new Date(train[i]).getSeconds()
         }
         setDisplayTrain(tempTrains)
-    }, 1000);
+    }, 5000);
 
     function reduceTime (milliseconds){
         // console.log("Milliseconds", new Date(milliseconds).getSeconds());
-        return milliseconds - 1000;
+        return milliseconds - 5000;
     }
 
     return(

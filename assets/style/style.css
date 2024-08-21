@@ -1,0 +1,17 @@
+.station {
+    background-color: red;
+}
+
+.searchBar, .searchBar:focus {
+    background-color: #0b0525;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    font-size: 1.3rem;
+    max-width: 80%;
+}
+
+body { 
+    background: white;
+}
