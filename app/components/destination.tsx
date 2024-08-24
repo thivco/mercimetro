@@ -25,13 +25,10 @@ export default function Destination(props: any) {
     <>
       <p className="stationDestination">{props.destinationInfo[0]}</p>
       <div className="stationNextTrains">
-        <p className="stationNextTrain">
-          1st train <br /> {displayTrain[0] != "" && displayTrain[0]}
+        <div className="stationNextTrain">
+         <p> 1st </p><p className="stationNextTrainTimer">{displayTrain[0] != "" && displayTrain[0]}
         </p>
-
-        <p className="stationNextTrain">
-          2nd train <br /> {displayTrain[1] != "" && displayTrain[1]}
-        </p>
+        </div>
       </div>
     </>
   );
