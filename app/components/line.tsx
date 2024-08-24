@@ -29,11 +29,14 @@ export default function Line(props:any){
       // {nextTrainsFormattedData && console.log("Ca doit etre defini lol", nextTrainsFormattedData[stationName][lineData[0]])}
     return (
         <>
-          <Text onPress={() => revealDestinations(lineData)}>{lineData[0]}</Text>
+          <Text onPress={() => revealDestinations(lineData)}><span className="stationLineOptions">{lineData[0]} </span></Text>
           {nextTrainsFormattedData && Object.entries(nextTrainsFormattedData[stationName][lineData[0]]).map((destination, index: any) => {
             console.log("Hello from the other side", destination)
             return(
+              <div className="stationDestinations">
+
               <Destination key={index} destinationInfo={destination}/>
+              </div>
             )
           })}
         </>
