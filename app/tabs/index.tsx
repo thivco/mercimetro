@@ -5,11 +5,12 @@ import { useRef } from "react";
 import { Ref } from "react";
 import formatResults from "../server/formatresults";
 import Station from "../components/station";
-import "../../assets/style/style.css"
+import "../../assets/style/style.scss"
 
 export default function Tab() {
   const [station, setStation] = useState("");
   const [results, setResults] = useState([]);
+  const [searchBarClass, setSearchBarClass] = useState("searchBar");
 
   // const searchString = useRef();
 
@@ -43,8 +44,13 @@ export default function Tab() {
       //   console.log("Index mapped", index)
       // }
       // )
-
+      setSearchBarClass("searchBarActive")
+      
       // return res;
+    }
+    else {
+      setSearchBarClass("searchBar")
+
     }
   };
 
@@ -57,10 +63,11 @@ export default function Tab() {
       }}
     >
       <input
-      className="searchBar"
+      className={searchBarClass}
         type="text"
         placeholder="Search a line, a station"
         onChange={handleResult}
+
       />
       {Object.entries(results).map(([stationName, stationData], index: any) => {
         console.log("Index", index, "Name", stationName, "data", stationData, 'results', results);

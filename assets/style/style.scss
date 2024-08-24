@@ -1,0 +1,120 @@
+$paris-transit-lines: (
+  "METRO_1": (#FFCD00, #000000),      // Yellow background, black text
+  "METRO_2": (#003CA6, #FFFFFF),      // Blue background, white text
+  "METRO_3": (#837902, #FFFFFF),      // Olive Green background, white text
+  "METRO_3bis": (#82C3BA, #000000),   // Turquoise background, black text
+  "METRO_4": (#BB4D98, #FFFFFF),      // Magenta background, white text
+  "METRO_5": (#FF7E2E, #000000),      // Orange background, black text
+  "METRO_6": (#6ECA97, #000000),      // Light Green background, black text
+  "METRO_7": (#FA9ABA, #000000),      // Pink background, black text
+  "METRO_7bis": (#6EC4E8, #000000),   // Sky Blue background, black text
+  "METRO_8": (#E19BDF, #000000),      // Lilac background, black text
+  "METRO_9": (#B6BD00, #000000),      // Lime Green background, black text
+  "METRO_10": (#C9910D, #000000),     // Yellowish Brown background, black text
+  "METRO_11": (#704B1C, #FFFFFF),     // Brown background, white text
+  "METRO_12": (#007852, #FFFFFF),     // Dark Green background, white text
+  "METRO_13": (#6EC4E8, #000000),     // Sky Blue background, black text
+  "METRO_14": (#62259D, #FFFFFF),     // Purple background, white text
+  "RER_A": (#E2231A, #FFFFFF),        // Red background, white text
+  "RER_B": (#003CA6, #FFFFFF),        // Blue background, white text
+  "RER_C": (#FFCA08, #000000),        // Yellow background, black text
+  "RER_D": (#00A85C, #FFFFFF),        // Green background, white text
+  "RER_E": (#CF009E, #FFFFFF),        // Pink background, white text
+  "TRAM_1": (#CC0033, #FFFFFF),       // Red background, white text
+  "TRAM_2": (#0066CC, #FFFFFF),       // Blue background, white text
+  "TRAM_3a": (#FF7E2E, #000000),      // Orange background, black text
+  "TRAM_3b": (#A6CE39, #000000),      // Light Green background, black text
+  "TRAM_4": (#FFD100, #000000),       // Yellow background, black text
+  "TRAM_5": (#8A2BE2, #FFFFFF),       // Blue Violet background, white text
+  "TRAM_6": (#D0D0D0, #000000),       // Grey background, black text
+  "TRAM_7": (#FF99FF, #000000),       // Light Pink background, black text
+  "TRAM_8": (#E1B11A, #000000),       // Gold background, black text
+  "TRAM_9": (#9A6324, #FFFFFF)        // Brown background, white text
+);
+// Credit ou c'est du, les couleurs des stations et de leurs textes sont choppees par chat pcq pas moyen de chopper les pictos officels qui sont pourtant renseignes sur l'api
+@each $line, $colors in $paris-transit-lines {
+  $background: nth($colors, 1);
+  $text-color: nth($colors, 2);
+
+  .#{$line} {
+    background-color: $background;
+    color: $text-color;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+
+
+.station {
+    background-color: #0b0525;
+    margin: 10px 0;
+    padding: 10px 20px;
+    min-width: 70%;
+    border-radius: 10px;
+}
+
+.stationName {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.stationLineOptions {
+    color:white;
+    margin: 5px 0;
+}
+
+.stationDestinations {
+    background: #1c104b;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.stationDestination {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.stationNextTrains {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.stationNextTrain {
+    font-family: Arial, Helvetica, sans-serif;
+    background: red;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Search bar */
+.searchBar, .searchBarActive {
+    position: absolute;
+    transition: 0.5ms ease-in;
+    background-color: #0b0525;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    max-width: 80%;
+}
+.searchBar{
+    top: 20%;
+}
+.searchBarActive {
+    top: 5%;
+    transition: 0.5ms ease-in;
+}
+
+.searchBar, .searchBar:focus {
+    outline: none;
+}
+
+body { 
+    background: white;
+}

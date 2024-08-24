@@ -7,9 +7,11 @@ import Destination from "./destination";
 
 export default function Line(props:any){
   const [nextTrainsFormattedData, setNextTrainsFormattedData] = useState(undefined);
+  const [lineDestinations, setLineDestinations] = useState(undefined)
+  const [currentLineClass, setCurrentLineClass] = useState()
   const stationName = props.currentLine.stationName;
   const lineData = props.currentLine.line;
-  const [lineDestinations, setLineDestinations] = useState(undefined)
+
   
   
   function revealDestinations(lineData) {
@@ -28,17 +30,19 @@ export default function Line(props:any){
 
       // {nextTrainsFormattedData && console.log("Ca doit etre defini lol", nextTrainsFormattedData[stationName][lineData[0]])}
     return (
-        <>
-          <Text onPress={() => revealDestinations(lineData)}><span className="stationLineOptions">{lineData[0]} </span></Text>
+        <div className="stationLineOptions">
+          <Text onPress={() => revealDestinations(lineData)}>
+            <span className={lineData[0].replace(" ", "_")}>{lineData[0].replace("METRO " || "RER ", "").replace("TRAM ", "T")}</span>
+            <span>{lineData[0]} </span></Text>
           {nextTrainsFormattedData && Object.entries(nextTrainsFormattedData[stationName][lineData[0]]).map((destination, index: any) => {
             console.log("Hello from the other side", destination)
+            // setCurrentLineClass()
             return(
               <div className="stationDestinations">
-
               <Destination key={index} destinationInfo={destination}/>
               </div>
             )
           })}
-        </>
+        </div>
     )
 }
