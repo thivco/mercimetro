@@ -58,8 +58,8 @@ export default function Tab() {
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
+        overflow: "scroll"
       }}
     >
       <input

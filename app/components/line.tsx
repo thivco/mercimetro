@@ -18,7 +18,7 @@ export default function Line(props:any){
     // if(lineDestinations == undefined){
       //   revealNextArrivals(lineData[0], lineData[1], lineData[2])
       // }
-      lineDestinations != undefined ? setLineDestinations(undefined) : revealNextArrivals(lineData[0], lineData[1], lineData[2])
+      lineDestinations != undefined ? setLineDestinations(undefined) : revealNextArrivals(lineData[0], lineData[1], lineData[2]) && setLineDestinations(true)
       console.log("Current state", lineDestinations, "Data", nextTrainsFormattedData);
   }
     async function revealNextArrivals(lineName: string,  lineCode: string , stationCode: string) {
