@@ -39,7 +39,7 @@ export default function Line(props:any){
             // setCurrentLineClass()
             return(
               <div className="stationDestinations">
-              <Destination key={index} destinationInfo={destination}/>
+              <Destination key={index} destinationInfo={destination} line={lineData}/>
               </div>
             )
           })}

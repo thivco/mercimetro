@@ -1,6 +1,8 @@
 import { Text } from "react-native";
 import { useState } from "react";
 import Line from "./line";
+import { View } from "react-native-reanimated/lib/typescript/Animated";
+
 
 export default function Station(props: any) {
   const [stationLines, setStationLines] = useState(undefined)
@@ -31,7 +33,7 @@ export default function Station(props: any) {
     <div className="station">
       <Text
       onPress={() => revealLines(stationData)}
-        key={props.index}
+      key={props.index}
       >
         <span className="stationName">
         {stationName}

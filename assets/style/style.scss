@@ -41,9 +41,9 @@ $paris-transit-lines: (
     // Green background, white text
     "RER_E": (#CF009E, #FFFFFF),
     // Pink background, white text
-    "TRAM_1": (#CC0033, #FFFFFF),
+    "TRAM_1": (#CC0033, #000000),
     // Red background, white text
-    "TRAM_2": (#0066CC, #FFFFFF),
+    "TRAM_2": (#0066CC, #000000),
     // Blue background, white text
     "TRAM_3a": (#FF7E2E, #000000),
     // Orange background, black text
@@ -51,7 +51,7 @@ $paris-transit-lines: (
     // Light Green background, black text
     "TRAM_4": (#FFD100, #000000),
     // Yellow background, black text
-    "TRAM_5": (#8A2BE2, #FFFFFF),
+    "TRAM_5": (#8A2BE2, #000000),
     // Blue Violet background, white text
     "TRAM_6": (#D0D0D0, #000000),
     // Grey background, black text
@@ -59,8 +59,10 @@ $paris-transit-lines: (
     // Light Pink background, black text
     "TRAM_8": (#E1B11A, #000000),
     // Gold background, black text
-    "TRAM_9": (#9A6324, #FFFFFF),
+    "TRAM_9": (#9A6324, #000000),
     // Brown background, white text
+    "TRAM_10": (#008B6E, #000000),
+    // Teal background, white text
     "TRAIN_H": (#0055A4, #FFFFFF),
     // Blue background, white text
     "TRAIN_J": (#007852, #FFFFFF),
@@ -107,15 +109,13 @@ $paris-transit-lines: (
         }
 
         @if str-index($line, "TRAM") {
-            border: 3px solid $background;
+            border: 4px solid $background;
             background: white;
             border-left: none;
             border-right: none;
             padding: 0 5px;
             width: fit-content;
         }
-
-
     }
 }
 
