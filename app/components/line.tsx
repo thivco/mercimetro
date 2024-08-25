@@ -38,8 +38,8 @@ export default function Line(props:any){
             console.log("Hello from the other side", destination)
             // setCurrentLineClass()
             return(
-              <div className="stationDestinations">
-              <Destination key={index} destinationInfo={destination} line={lineData}/>
+              <div className="stationDestination">
+              <Destination key={index} destinationInfo={destination} line={lineData} stationName={stationName}/>
               </div>
             )
           })}

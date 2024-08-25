@@ -11,6 +11,22 @@ export default function Favorites() {
         setCurrentFavorites(JSON.parse(tempFav))
         console.log("Temp favorites", JSON.parse(tempFav));
     }
+
+    async function removeFromFavorite(arrayIndex : number){
+        try{
+            const currentFavorites = await AsyncStorage.getItem("favorites") 
+            let tempFav = JSON.parse(currentFavorites)
+            // tempFav = await AsyncStorage.getItem("favorites")
+            console.log(tempFav, arrayIndex);
+            tempFav.splice(arrayIndex, 1)
+            console.log(tempFav, arrayIndex);
+            setCurrentFavorites(tempFav)   
+        }
+        catch{
+            console.log("Error whene deleting an element");
+            
+        }
+    }
     // getFavorites()
 
     return(
@@ -20,7 +36,10 @@ export default function Favorites() {
         <Text onPress={() => getFavorites()}>Regenerate favorites</Text>
             {currentFavorites && currentFavorites.map((favorite, index) => {
                 return (
+                    <div key={index}>
                     <p>DESTINATION : {favorite.destination}</p>
+                    <Text onPress={()=>removeFromFavorite(index)}>Remove from favorites</Text>
+                    </div>
                 )
                 
             })}        

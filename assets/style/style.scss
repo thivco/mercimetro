@@ -141,13 +141,13 @@ $paris-transit-lines: (
     color: white;
 }
 
-.stationDestinations {
+.stationDestination {
     background: #1c104b;
     margin: 20px 0;
     border-radius: 10px;
 }
 
-.stationDestination {
+.stationDestinationName {
     color: white;
     text-align: center;
     font-size: 1.2rem;
@@ -180,6 +180,10 @@ $paris-transit-lines: (
     margin-bottom: 1rem;
     padding: 15px;
     text-align: center;
+}
+
+.stationAddToFavorites {
+    color:white;
 }
 
 /* Search bar */

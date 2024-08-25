@@ -23,10 +23,9 @@ export default function Destination(props: any) {
     return milliseconds - 1000;
   }
 
-  async function saveFavorite(lineID: string, destination: string) {
+  async function saveFavorite(lineID: string, destination: string, stationName : string) {
     // Recup les donnees, append la nouvelle entree, puis rafraichir la variable dans le storage
-    let newFav = { line: lineID, destination: destination };
-  
+    let newFav = { stationName: stationName, line: lineID, destination: destination };
     try {
       const currentFavorites = await AsyncStorage.getItem("favorites");
       let favorites = [];
@@ -52,8 +51,8 @@ export default function Destination(props: any) {
 
   return (
     <>
-      <p className="stationDestination">{props.destinationInfo[0]}</p>
-        <Text onPress={() => saveFavorite(props.line[2], props.destinationInfo[0])}>Fav</Text>
+      <p className="stationDestinationName">{props.destinationInfo[0]}</p>
+        <Text onPress={() => saveFavorite(props.line[2], props.destinationInfo[0], props.stationName)}> <span className="stationAddToFavorites">Add to favorites</span> </Text>
       <div className="stationNextTrains">
         <div className="stationNextTrain">
          <p> 1st </p><p className="stationNextTrainTimer">{displayTrain[0] != "" && displayTrain[0]}
